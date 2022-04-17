@@ -27,6 +27,7 @@ bool led_process_init (led_process_t *led)
     if (led != NULL)
     {
         memset (led, 0, sizeof (led_process_t));
+        led->base.object = led;
         led->base.init = led_process_init_hardware;
         led->base.read = led_process_set;
         status = true;
