@@ -89,4 +89,6 @@ static bool producer_wait (producer_t *producer)
 
         usleep (PRODUCER_1ms);
     }
+
+    return true;
 }
