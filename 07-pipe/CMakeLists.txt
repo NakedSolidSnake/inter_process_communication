@@ -15,12 +15,18 @@ if (DEFINED ARCH)
     elseif (${ARCH} STREQUAL "PC")
         message ("-- Created ${ARCH} compilation.")
         set (LIBS bussiness)
-        set (FOLDER "pc")
+        set (FOLDER "pc")    
+    elseif (${ARCH} STREQUAL "DOCKER")
+        message ("-- Created ${ARCH} compilation.")
+        set (LIBS bussiness)
+        set (FOLDER "docker")
     endif ()
 else ()
     message(WARNING "")
     message("-- You must specify the ARCH variable")
     message("-- cmake -DARCH=PC ..")
+    message("-- or")
+    message("-- cmake -DARCH=DOCKER ..")
     message("-- or")
     message("-- cmake -DARCH=RASPBERRY ..")
     message("")
@@ -45,7 +51,7 @@ install (TARGETS bussiness DESTINATION bin)
 add_executable(launch_processes "")
 target_sources(launch_processes 
     PUBLIC 
-    ${CMAKE_CURRENT_LIST_DIR}/src/launch_processes.c
+    ${CMAKE_CURRENT_LIST_DIR}/src/platform/${FOLDER}/launch_processes.c
     )
 target_include_directories(launch_processes
     PUBLIC 
