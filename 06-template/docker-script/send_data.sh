@@ -4,4 +4,4 @@ touch file
 echo "1" > file
 
 # Copy data to docker using tee
-docker exec -i button tee /tmp/button < file > /dev/null
+docker exec -i ipc tee /tmp/button < file > /dev/null

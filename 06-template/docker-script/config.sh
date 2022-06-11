@@ -18,6 +18,7 @@ fi
 touch $FILENAME
 
 echo '{' >> $FILENAME
+echo '  "dns": ["8.8.8.8"],' >> $FILENAME
 echo '  "log-driver": "syslog",' >> $FILENAME
 echo '  "log-opts": {' >> $FILENAME
 echo '    "syslog-address": "tcp://'$IP':514",' >> $FILENAME
