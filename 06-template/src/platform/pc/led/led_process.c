@@ -15,7 +15,7 @@ static bool led_process_init_hardware (void *object)
 
 static bool led_process_set (void *object, bool state)
 {
-    openlog ("LED PIPE", LOG_PID | LOG_CONS, LOG_USER);
+    openlog ("LED IPC", LOG_PID | LOG_CONS, LOG_USER);
     syslog (LOG_INFO, "LED Status: %s", state ? "ON" : "OFF");
     closelog ();
     return true;

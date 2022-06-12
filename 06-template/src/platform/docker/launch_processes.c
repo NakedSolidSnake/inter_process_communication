@@ -16,7 +16,6 @@ int main (int argc, char *argv[])
 
     int state;
 
-    // daemon (1, 1);
     process.button = fork ();
     if (process.button == 0)
     {

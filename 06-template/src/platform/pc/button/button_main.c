@@ -6,7 +6,7 @@ int main (int argc, char *argv[])
 {
     button_pc_t pc = 
     {
-        .fifo = "/tmp/pipe"
+        .fifo = "/tmp/button"
     };
 
     button_process_t button;
