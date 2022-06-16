@@ -4,26 +4,26 @@
 #include <unistd.h>
 #include <stdio.h>
 
-bool consumer_init (consumer_t *led)
+bool consumer_init (consumer_t *consumer)
 {
     bool status = false;
 
-    if (led != NULL)
+    if (consumer != NULL)
     {
-        memset (led, 0, sizeof (consumer_t));
+        memset (consumer, 0, sizeof (consumer_t));
         status = true;
     }
 
     return status;
 }
 
-bool consumer_open (consumer_t *led, consumer_args_t *args)
+bool consumer_open (consumer_t *consumer, consumer_args_t *args)
 {
     bool status = false;
 
-    if (led != NULL)
+    if (consumer != NULL)
     {
-        led->base = args->base;
+        consumer->base = args->base;
         
         status = true;
     }
